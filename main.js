@@ -8,6 +8,14 @@ function dice_initialize(container) {
     //canvas.style.height = window.innerHeight - 1 + 'px';
     //canvas.style.width = (window.innerWidth / 2) + 'px';
     //canvas.style.height = (window.innerHeight / 2) + 'px';
+    
+    //Scale and Position dice canvas
+    canvas.style.position = "absolute";
+    canvas.style.left = (window.innerWidth * .75) + 'px';
+    canvas.style.top = (window.innerHeight * .75) + 'px';
+    canvas.style.height = (window.innerHeight / 4) + 'px';
+    canvas.style.width = (window.innerWidth / 4) + 'px';
+    
     var label = $t.id('label');
     var set = $t.id('set');
     var selector_div = $t.id('selector_div');
