@@ -4,8 +4,8 @@ function dice_initialize(container) {
     $t.remove($t.id('loading_text'));
 
     var canvas = $t.id('canvas');
-    canvas.style.width = window.innerWidth - 1 + 'px';
-    canvas.style.height = window.innerHeight - 1 + 'px';
+    //canvas.style.width = window.innerWidth - 1 + 'px';
+    //canvas.style.height = window.innerHeight - 1 + 'px';
     //canvas.style.width = (window.innerWidth / 2) + 'px';
     //canvas.style.height = (window.innerHeight / 2) + 'px';
     var label = $t.id('label');
