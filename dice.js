@@ -291,7 +291,7 @@
     this.dice_mass = { 'd4': 300, 'd6': 300, 'd8': 340, 'd10': 350, 'd12': 350, 'd20': 400, 'd100': 350 };
     this.dice_inertia = { 'd4': 5, 'd6': 13, 'd8': 10, 'd10': 9, 'd12': 8, 'd20': 6, 'd100': 9 };
 
-    this.scale = 50;
+    this.scale = 50;  //Original 50. 100 seemed to make no size difference 
 
     this.create_d4 = function() {
         if (!this.d4_geometry) this.d4_geometry = this.create_d4_geometry(this.scale * 1.2);
@@ -458,7 +458,8 @@
             this.h = this.ch;
         }
         this.aspect = Math.min(this.cw / this.w, this.ch / this.h);
-        that.scale = Math.sqrt(this.w * this.w + this.h * this.h) / 13;
+        //that.scale = Math.sqrt(this.w * this.w + this.h * this.h) / 13;
+      	that.scale = Math.sqrt(this.w * this.w + this.h * this.h) / window.global_dice_scale;
 
         this.renderer.setSize(this.cw * 2, this.ch * 2);
 
