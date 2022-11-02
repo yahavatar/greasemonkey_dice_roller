@@ -24,6 +24,7 @@ window.global_dice_scale = 8;		//Default was 13. 8 gives a good chunks look to t
 		To-Do List:
     * Make background a little see-through (Opacity?)
     * Figure out how to de-focus the manual input block after typing
+    * Clear output when click in dice area
     * Figure out how to select dice from the selection of dice and change the input box
     
 */
@@ -60,10 +61,10 @@ jQuery("body").append(`
 		<div id="selector_div" style="display: none; position absolute"></div>
     <div id="canvas"></div>
 		<div id='controls'>
-				<input type="text" id="set" value="4d6"></input>
+				<input type="text" id="set" value="4d6" style="height: 24px;"></input>
 				<button id="throw">throw</button>
 				&nbsp;=&nbsp;
-				<span id="label"></span>
+				<span id="label" style="font-weight: bolder; color:black;"></span>
 		</div>
 `);
 
@@ -80,7 +81,7 @@ canvas.style.border = "1px solid black";
 let controls = $t.id('controls');
 controls.style.position = "fixed";
 controls.style.left = ((window.innerWidth * .75) + 1) + 'px';
-controls.style.top = ((window.innerHeight * .75) + 1) + 'px';
+controls.style.top = ((window.innerHeight * .75) - 25) + 'px';
 
 //Initialize Dice
 dice_initialize(canvas); //"canvas" limits this to the container for the dice. We should not use the entire document.body!!!
